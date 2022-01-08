@@ -1,5 +1,5 @@
-//SPDX-License-Identifer: GPL-3.0
-// *Copyright (c) 2021 Ryuichi Ueda. All rights reserved
+//BSD 3-Clause License
+//Copyright (c) 2021 Ryuichi Ueda. All rights reserved
 
 #!/usr/bin/env python3
 import rospy
@@ -10,6 +10,6 @@ pub = rospy.Publisher('count_up', Int32, queue_size=1)
 rate = rospy.Rate(10)
 n = 0
 while not rospy.is_shutdown():
-    n += 1
+    n = int(datetime.datetime.now())
     pub.publish(n)
     rate.sleep()
